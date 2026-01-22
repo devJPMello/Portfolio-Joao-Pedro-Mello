@@ -55,7 +55,7 @@ export const projects: Project[] = [
       'Deploy automatizado na Vercel e Railway'
     ],
     demoUrl: 'https://taskmind-demo.vercel.app',
-    repoUrl: 'https://github.com/devJPMello/taskmind'
+    repoUrl: 'https://github.com/devJPMello/TaskMind'
   },
   {
     id: '3',
