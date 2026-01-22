@@ -36,7 +36,7 @@ export const projects: Project[] = [
       'Deploy do frontend na Vercel e backend no Railway'
     ],
     demoUrl: 'https://financeflow-demo.vercel.app',
-    repoUrl: 'https://github.com/devJPMello/financeflow'
+    repoUrl: 'https://github.com/devJPMello/FinanceFlow'
   },
   {
     id: '2',
