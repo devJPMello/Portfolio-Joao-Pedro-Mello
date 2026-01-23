@@ -4,16 +4,16 @@ export default function CTA() {
   return (
     <section id="contato" className="section-container">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
           Vamos Trabalhar Juntos?
         </h2>
-        <p className="text-lg md:text-xl mb-8 text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl mb-8 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Desenvolvedor Full Stack especializado em React, Node.js e integração com IA. 
           Pronto para entregar soluções escaláveis e de alta qualidade.
         </p>
 
-        <div className="bg-white rounded-xl shadow-md p-6 md:p-8 mb-8 max-w-2xl mx-auto">
-          <p className="text-base text-gray-700 mb-6">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-900/50 p-6 md:p-8 mb-8 max-w-2xl mx-auto">
+          <p className="text-base text-gray-700 dark:text-gray-300 mb-6">
             Se você está procurando um desenvolvedor que entende tanto de código quanto de negócio, 
             e que pode contribuir imediatamente com seu time, entre em contato.
           </p>
@@ -30,7 +30,7 @@ export default function CTA() {
             </a>
             <a
               href="mailto:joaopedromendesmello@gmail.com"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg font-medium hover:bg-gray-900 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-800 dark:bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-900 dark:hover:bg-gray-600 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
             >
               <FiMail className="h-5 w-5" />
               Email
@@ -46,7 +46,7 @@ export default function CTA() {
           </div>
         </div>
 
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-500 dark:text-gray-400">
           Resposta rápida garantida
         </p>
       </div>

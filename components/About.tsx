@@ -4,9 +4,9 @@ export default function About() {
       <div className="max-w-4xl mx-auto">
         <h2 className="section-title text-center">Sobre Mim</h2>
         
-        <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+        <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 space-y-6">
           <p className="text-lg leading-relaxed">
-            Sou um <strong>Desenvolvedor Full Stack</strong> com foco em criar soluções 
+            Sou um <strong className="text-gray-900 dark:text-gray-100">Desenvolvedor Full Stack</strong> com foco em criar soluções 
             que fazem diferença. Trabalho com tecnologias modernas como React, Next.js e Node.js, 
             sempre buscando entregar código limpo, performático e escalável.
           </p>
@@ -24,11 +24,11 @@ export default function About() {
             que resolve o problema do cliente de forma eficiente e sustentável.
           </p>
           
-          <div className="mt-8 p-6 bg-primary-50 rounded-lg border-l-4 border-primary-600">
-            <p className="text-gray-800 font-medium mb-2">
+          <div className="mt-8 p-6 bg-primary-50 dark:bg-gray-800 rounded-lg border-l-4 border-primary-600 dark:border-primary-500">
+            <p className="text-gray-800 dark:text-gray-200 font-medium mb-2">
               O que desenvolvo:
             </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
               <li>Aplicações web modernas e responsivas</li>
               <li>APIs RESTful escaláveis e bem documentadas</li>
               <li>Sistemas com integração de IA para automação</li>

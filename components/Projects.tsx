@@ -22,7 +22,7 @@ export default function Projects() {
     : contributionProjects.slice(0, INITIAL_CONTRIBUTION_PROJECTS)
 
   return (
-    <section id="projetos" className="section-container bg-gray-50">
+    <section id="projetos" className="section-container bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto">
         <h2 className="section-title text-center">Projetos</h2>
         <p className="section-subtitle text-center">
@@ -33,8 +33,8 @@ export default function Projects() {
         {aiProjects.length > 0 && (
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-8">
-              <FiZap className="h-8 w-8 text-primary-600" />
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+              <FiZap className="h-8 w-8 text-primary-600 dark:text-primary-400" />
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
                 Projetos com Inteligência Artificial
               </h3>
             </div>
@@ -49,11 +49,11 @@ export default function Projects() {
         {/* Projetos Principais */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
               Projetos Principais
             </h3>
             {mainProjects.length > INITIAL_MAIN_PROJECTS && (
-              <span className="text-sm text-gray-500">
+              <span className="text-sm text-gray-500 dark:text-gray-400">
                 {mainProjects.length} projetos
               </span>
             )}
@@ -111,11 +111,11 @@ export default function Projects() {
         {contributionProjects.length > 0 && (
           <div>
             <div className="flex items-center justify-between mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
                 Projetos com Contribuição
               </h3>
               {contributionProjects.length > INITIAL_CONTRIBUTION_PROJECTS && (
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   {contributionProjects.length} projetos
                 </span>
               )}
@@ -173,42 +173,42 @@ export default function Projects() {
 
 function ProjectCard({ project, highlightAI = false }: { project: Project; highlightAI?: boolean }) {
   return (
-    <div className={`card ${highlightAI ? 'ring-2 ring-primary-500' : ''} h-full flex flex-col`}>
+    <div className={`card ${highlightAI ? 'ring-2 ring-primary-500 dark:ring-primary-400' : ''} h-full flex flex-col`}>
       {highlightAI && project.aiFeatures && (
-        <div className="mb-4 p-3 bg-primary-100 rounded-lg">
-          <p className="text-sm font-semibold text-primary-800 mb-1">
+        <div className="mb-4 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
+          <p className="text-sm font-semibold text-primary-800 dark:text-primary-300 mb-1">
             Projeto com IA
           </p>
-          <p className="text-xs text-primary-700">
+          <p className="text-xs text-primary-700 dark:text-primary-400">
             <strong>Serviço:</strong> {project.aiFeatures.service} |{' '}
             <strong>Automação:</strong> {project.aiFeatures.automation}
           </p>
         </div>
       )}
       
-      <h3 className="text-2xl font-bold text-gray-900 mb-3">{project.name}</h3>
+      <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">{project.name}</h3>
       
       {project.problem && (
         <div className="mb-4">
-          <p className="text-sm font-semibold text-gray-700 mb-1">Problema:</p>
-          <p className="text-gray-600">{project.problem}</p>
+          <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Problema:</p>
+          <p className="text-gray-600 dark:text-gray-400">{project.problem}</p>
         </div>
       )}
       
       {project.solution && (
         <div className="mb-4">
-          <p className="text-sm font-semibold text-gray-700 mb-1">Solução:</p>
-          <p className="text-gray-600">{project.solution}</p>
+          <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Solução:</p>
+          <p className="text-gray-600 dark:text-gray-400">{project.solution}</p>
         </div>
       )}
 
       <div className="mb-4">
-        <p className="text-sm font-semibold text-gray-700 mb-2">Tecnologias:</p>
+        <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tecnologias:</p>
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium"
+              className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium"
             >
               {tech}
             </span>
@@ -217,12 +217,12 @@ function ProjectCard({ project, highlightAI = false }: { project: Project; highl
       </div>
 
       <div className="mb-4 flex-grow">
-        <p className="text-sm font-semibold text-gray-700 mb-2">Destaques:</p>
+        <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Destaques:</p>
         <ul className="space-y-1">
           {project.highlights.map((highlight, index) => (
             <li
               key={index}
-              className="text-sm text-gray-600 flex items-start before:content-['▹'] before:text-primary-600 before:mr-2 before:font-bold"
+              className="text-sm text-gray-600 dark:text-gray-400 flex items-start before:content-['▹'] before:text-primary-600 dark:before:text-primary-400 before:mr-2 before:font-bold"
             >
               {highlight}
             </li>
@@ -236,7 +236,7 @@ function ProjectCard({ project, highlightAI = false }: { project: Project; highl
             href={project.demoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm transition-colors"
           >
             <FiExternalLink className="h-4 w-4" />
             Demo
@@ -247,7 +247,7 @@ function ProjectCard({ project, highlightAI = false }: { project: Project; highl
             href={project.repoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm transition-colors"
           >
             <FiGithub className="h-4 w-4" />
             Repositório
@@ -260,37 +260,37 @@ function ProjectCard({ project, highlightAI = false }: { project: Project; highl
 
 function ContributionCard({ project }: { project: Project }) {
   return (
-    <div className="card border-l-4 border-gray-400 h-full flex flex-col">
+    <div className="card border-l-4 border-gray-400 dark:border-gray-600 h-full flex flex-col">
       <div className="mb-3">
-        <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded">
+        <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">
           Contribuição em Equipe
         </span>
       </div>
       
-      <h3 className="text-2xl font-bold text-gray-900 mb-2">{project.name}</h3>
-      <p className="text-primary-600 font-semibold mb-4">{project.company}</p>
+      <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">{project.name}</h3>
+      <p className="text-primary-600 dark:text-primary-400 font-semibold mb-4">{project.company}</p>
       
       {project.role && (
         <div className="mb-4">
-          <p className="text-sm font-semibold text-gray-700 mb-1">Meu Papel:</p>
-          <p className="text-gray-600">{project.role}</p>
+          <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Meu Papel:</p>
+          <p className="text-gray-600 dark:text-gray-400">{project.role}</p>
         </div>
       )}
       
       {project.contribution && (
         <div className="mb-4">
-          <p className="text-sm font-semibold text-gray-700 mb-1">Contribuição:</p>
-          <p className="text-gray-600">{project.contribution}</p>
+          <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Contribuição:</p>
+          <p className="text-gray-600 dark:text-gray-400">{project.contribution}</p>
         </div>
       )}
 
       <div className="mb-4">
-        <p className="text-sm font-semibold text-gray-700 mb-2">Tecnologias:</p>
+        <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tecnologias:</p>
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium"
+              className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium"
             >
               {tech}
             </span>
@@ -299,12 +299,12 @@ function ContributionCard({ project }: { project: Project }) {
       </div>
 
       <div className="mb-4 flex-grow">
-        <p className="text-sm font-semibold text-gray-700 mb-2">Implementações:</p>
+        <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Implementações:</p>
         <ul className="space-y-1">
           {project.highlights.map((highlight, index) => (
             <li
               key={index}
-              className="text-sm text-gray-600 flex items-start before:content-['▹'] before:text-gray-400 before:mr-2 before:font-bold"
+              className="text-sm text-gray-600 dark:text-gray-400 flex items-start before:content-['▹'] before:text-gray-400 dark:before:text-gray-500 before:mr-2 before:font-bold"
             >
               {highlight}
             </li>

@@ -2,7 +2,7 @@ import { techStack } from '@/data/stack'
 
 export default function TechStack() {
   return (
-    <section id="stack" className="section-container bg-gray-50">
+    <section id="stack" className="section-container bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <h2 className="section-title text-center">Stack Tecnológico</h2>
         <p className="section-subtitle text-center">
@@ -12,14 +12,14 @@ export default function TechStack() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {techStack.map((category) => (
             <div key={category.category} className="card">
-              <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-primary-600">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b-2 border-primary-600 dark:border-primary-500">
                 {category.category}
               </h3>
               <ul className="space-y-2">
                 {category.technologies.map((tech) => (
                   <li
                     key={tech}
-                    className="text-gray-700 flex items-center before:content-['▹'] before:text-primary-600 before:mr-2 before:font-bold"
+                    className="text-gray-700 dark:text-gray-300 flex items-center before:content-['▹'] before:text-primary-600 dark:before:text-primary-400 before:mr-2 before:font-bold"
                   >
                     {tech}
                   </li>
