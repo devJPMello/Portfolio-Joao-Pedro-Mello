@@ -35,7 +35,6 @@ export const projects: Project[] = [
       'Exportação de relatórios em CSV/PDF',
       'Deploy do frontend na Vercel e backend no Railway'
     ],
-    demoUrl: 'https://financeflow-demo.vercel.app',
     repoUrl: 'https://github.com/devJPMello/FinanceFlow'
   },
   {
@@ -54,7 +53,6 @@ export const projects: Project[] = [
       'Estrutura preparada para planos Free e Pro',
       'Deploy automatizado na Vercel e Railway'
     ],
-    demoUrl: 'https://taskmind-demo.vercel.app',
     repoUrl: 'https://github.com/devJPMello/TaskMind'
   },
   {
