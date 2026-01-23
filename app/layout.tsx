@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   description: 'Desenvolvedor Full Stack Pleno especializado em React, Next.js, Node.js e integração com IA. Criando soluções modernas e performáticas.',
   keywords: 'Desenvolvedor Full Stack, React, Next.js, Node.js, Azure OpenAI, Desenvolvedor Frontend, Desenvolvedor Backend',
   authors: [{ name: 'João Pedro' }],
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
   openGraph: {
     title: 'João Pedro - Desenvolvedor Full Stack',
     description: 'Desenvolvedor Full Stack Pleno especializado em React, Next.js, Node.js e integração com IA',
