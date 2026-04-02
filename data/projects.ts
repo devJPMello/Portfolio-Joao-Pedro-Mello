@@ -21,25 +21,47 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: '1',
-    name: 'FinanceFlow | Plataforma de Gestão Financeira',
+    name: 'FinanceFlow | Plataforma de gestão financeira',
     category: 'main',
-    problem: 'Usuários tinham dificuldade em controlar receitas, despesas e metas financeiras de forma organizada, segura e com uma visão clara da saúde financeira ao longo do tempo.',
-    solution: 'Desenvolvi uma plataforma profissional de gestão financeira pessoal com arquitetura moderna separada em backend (NestJS) e frontend (React), oferecendo autenticação JWT, CRUD completo de transações e categorias personalizadas, dashboard interativo com gráficos e métricas, sistema de metas financeiras com acompanhamento, relatórios e exportação de dados, e histórico completo de movimentações, seguindo boas práticas de mercado e regras de negócio robustas.',
-    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Zustand', 'React Router', 'Recharts', 'Axios', 'React Hot Toast', 'NestJS', 'Prisma', 'PostgreSQL (NeonDB)', 'JWT', 'bcrypt', 'class-validator'],
-    highlights: [
-      'Arquitetura separada: backend NestJS e frontend React com Vite',
-      'Dashboard financeiro completo com gráficos mensais e anuais usando Recharts',
-      'CRUD completo de transações financeiras (receitas e despesas)',
-      'Sistema de categorias personalizadas com validação de tipos',
-      'Metas financeiras com acompanhamento de progresso e cálculos automáticos',
-      'Regras de negócio robustas: validação de valores, isolamento por usuário, integridade referencial',
-      'Autenticação e autorização JWT com senhas hasheadas (bcrypt)',
-      'API REST segura com validação de dados (class-validator)',
-      'Histórico completo de movimentações financeiras',
-      'Relatórios e exportação de dados (CSV/PDF)',
-      'Isolamento completo de dados por usuário',
-      'Deploy: frontend na Vercel e backend no Railway/NeonDB'
+    problem:
+      'Muitas pessoas têm dificuldade em organizar receitas, despesas e metas, perceber a evolução no tempo e, em paralelo, separar o que é "dia a dia" do que é contexto fiscal (IRS, deduções, documentação), sem ferramentas que unam simplicidade, segurança e visão clara.',
+    solution:
+      'Desenvolvi uma plataforma full stack de gestão financeira pessoal com frontend (React + Vite) e backend (NestJS) bem separados: autenticação gerida com Clerk (sessão no cliente, validação de JWT no servidor e utilizador interno na base de dados), CRUD de transações e categorias (com tipos receita/despesa), dashboard com gráficos e resumo mensal (orçamentos, pendências, fechamento mensal), metas com progresso, TaxVision como módulo dedicado à organização fiscal (marcadores de potencial dedução, checklist, timeline de documentos, sugestões e relatórios assistidos por IA), importação de extratos (CSV, PDF, imagem) com Google Gemini e confirmação em lote, anexos por lançamento, duplicatas e exportações (CSV/PDF e pacote para contador), com isolamento de dados por utilizador, validação de DTOs e preocupação com produção (health checks, rate limiting, observabilidade opcional, jobs assíncronos). O fluxo atual é Clerk + Bearer token na API, não autenticação JWT "própria" com bcrypt como eixo principal.',
+    technologies: [
+      'React',
+      'TypeScript',
+      'Vite',
+      'Tailwind CSS',
+      'React Router',
+      'Recharts',
+      'Axios',
+      'React Hook Form',
+      'Zod',
+      'React Hot Toast',
+      '@clerk/clerk-react',
+      'Vitest',
+      'Playwright',
+      'NestJS',
+      'Prisma',
+      'PostgreSQL (Neon)',
+      'Clerk (backend)',
+      'class-validator',
+      'Swagger',
+      'Throttler',
+      'Google Gemini',
+      'Sentry (opcional)'
     ],
+    highlights: [
+      'Arquitetura cliente/servidor clara: SPA React e API NestJS com prefixo /api',
+      'Clerk para sign-in/sign-up, tokens e bridge para o Axios',
+      'Dashboard com gráficos (ex.: receitas/despesas por mês, distribuição por categoria), métricas do mês, orçamento por categoria e painel de pendências',
+      'Transações: filtros, densidade de lista, sticky header, importação IA, OFX, anexos, operações em lote',
+      'Categorias com orçamentos e previsão de despesas; metas com acompanhamento',
+      'TaxVision: fluxo fiscal (checklist, classificação sugerida, OCR de anexos, relatórios, quotas de IA)',
+      'Prisma + migrações; isolamento por userId nas queries; validação e guards nas rotas',
+      'Testes (Vitest no front, Jest/e2e no back), CI e deploy com Render (API + PostgreSQL + static site), blueprint render.yaml'
+    ],
+    demoUrl: 'https://financeflow-zocs.onrender.com/',
     repoUrl: 'https://github.com/devJPMello/FinanceFlow'
   },
   {
