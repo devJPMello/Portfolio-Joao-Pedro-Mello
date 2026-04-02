@@ -84,6 +84,7 @@ export const projects: Project[] = [
       agent: '3 agentes especializados: Chat Livre (conversação geral), Planos de Estudo (criação de planos personalizados) e Resumos (geração de resumos inteligentes)',
       automation: 'Automação completa do fluxo de interação com IA através de sistema de threads, permitindo conversas contextuais e histórico persistente para múltiplos agentes especializados'
     },
+    demoUrl: 'https://nexus-1-yc96.onrender.com/',
     repoUrl: 'https://github.com/BitStudioLabs/nexus/tree/develop'
   },
   {
