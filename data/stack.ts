@@ -6,18 +6,22 @@ export interface TechStack {
 export const techStack: TechStack[] = [
   {
     category: 'Frontend',
-    technologies: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3']
+    technologies: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'React Native (Expo)']
   },
   {
     category: 'Backend',
-    technologies: ['Node.js', 'NestJS', 'Express', 'REST APIs', 'PostgreSQL', 'MongoDB']
+    technologies: ['Node.js', 'NestJS', 'Express', 'APIs REST', 'JWT', 'Swagger', 'Socket.IO', 'Redis', 'BullMQ']
   },
   {
-    category: 'IA & Automação',
-    technologies: ['Azure OpenAI', 'Prompt Engineering', 'Agentes de IA', 'Automação de Processos']
+    category: 'IA',
+    technologies: ['Azure OpenAI', 'OpenAI API', 'Google Gemini', 'Prompt Engineering', 'Agentes de IA']
   },
   {
-    category: 'Ferramentas',
-    technologies: ['Git', 'GitHub', 'GitLab', 'Vercel', 'Netlify', 'Render', 'Docker']
+    category: 'Dados',
+    technologies: ['PostgreSQL', 'PostGIS', 'MySQL', 'Prisma', 'TypeORM', 'Python', 'ETL']
+  },
+  {
+    category: 'DevOps e Métodos',
+    technologies: ['Docker', 'CI/CD', 'Git', 'GitHub', 'GitLab', 'Vercel', 'Jest', 'Scrum', 'Kanban']
   }
 ];

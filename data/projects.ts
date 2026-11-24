@@ -8,6 +8,9 @@ export interface Project {
   highlights: string[];
   demoUrl?: string;
   repoUrl?: string;
+  image?: { src: string; alt: string; width?: number; height?: number };
+  metrics?: { value: string; label: string }[];
+  extraLinks?: { label: string; url: string }[];
   company?: string;
   role?: string;
   contribution?: string;
@@ -20,71 +23,54 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: '1',
-    name: 'FinanceFlow | Plataforma de gestão financeira',
+    id: '0',
+    name: 'ClimaAgro | Monitoramento climático e agrícola (TCC)',
     category: 'main',
     problem:
-      'Muitas pessoas têm dificuldade em organizar receitas, despesas e metas, perceber a evolução no tempo e, em paralelo, separar o que é "dia a dia" do que é contexto fiscal (IRS, deduções, documentação), sem ferramentas que unam simplicidade, segurança e visão clara.',
+      'Produtores rurais e analistas têm dificuldade em cruzar clima e produtividade por região, acompanhar alertas oficiais e tirar dúvidas técnicas rapidamente, com dados espalhados em várias fontes públicas.',
     solution:
-      'Desenvolvi uma plataforma full stack de gestão financeira pessoal com frontend (React + Vite) e backend (NestJS) bem separados: autenticação gerida com Clerk (sessão no cliente, validação de JWT no servidor e utilizador interno na base de dados), CRUD de transações e categorias (com tipos receita/despesa), dashboard com gráficos e resumo mensal (orçamentos, pendências, fechamento mensal), metas com progresso, TaxVision como módulo dedicado à organização fiscal (marcadores de potencial dedução, checklist, timeline de documentos, sugestões e relatórios assistidos por IA), importação de extratos (CSV, PDF, imagem) com Google Gemini e confirmação em lote, anexos por lançamento, duplicatas e exportações (CSV/PDF e pacote para contador), com isolamento de dados por utilizador, validação de DTOs e preocupação com produção (health checks, rate limiting, observabilidade opcional, jobs assíncronos). O fluxo atual é Clerk + Bearer token na API, não autenticação JWT "própria" com bcrypt como eixo principal.',
-    technologies: [
-      'React',
-      'TypeScript',
-      'Vite',
-      'Tailwind CSS',
-      'React Router',
-      'Recharts',
-      'Axios',
-      'React Hook Form',
-      'Zod',
-      'React Hot Toast',
-      '@clerk/clerk-react',
-      'Vitest',
-      'Playwright',
-      'NestJS',
-      'Prisma',
-      'PostgreSQL (Neon)',
-      'Clerk (backend)',
-      'class-validator',
-      'Swagger',
-      'Throttler',
-      'Google Gemini',
-      'Sentry (opcional)'
-    ],
+      'Desenvolvi, como TCC, uma plataforma full stack que consolida dados do IBGE (LSPA/SIDRA), Open-Meteo, CPTEC/INPE e INMET em PostgreSQL com PostGIS. Construí pipelines ETL em Python, dashboards geoespaciais com React e Leaflet (mapas coropléticos por UF), séries temporais e comparativo clima × produtividade, além do IAgro, um assistente com Google Gemini que responde com base nos dados da plataforma e analisa fotos. Autenticação com Clerk e sincronização climática agendada (06h e 18h) com GitHub Actions.',
+    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Leaflet', 'Recharts', 'Node.js', 'Express', 'Sequelize', 'PostgreSQL + PostGIS', 'Python (ETL)', 'Google Gemini', 'Clerk', 'GitHub Actions', 'Render'],
     highlights: [
-      'Arquitetura cliente/servidor clara: SPA React e API NestJS com prefixo /api',
-      'Clerk para sign-in/sign-up, tokens e bridge para o Axios',
-      'Dashboard com gráficos (ex.: receitas/despesas por mês, distribuição por categoria), métricas do mês, orçamento por categoria e painel de pendências',
-      'Transações: filtros, densidade de lista, sticky header, importação IA, OFX, anexos, operações em lote',
-      'Categorias com orçamentos e previsão de despesas; metas com acompanhamento',
-      'TaxVision: fluxo fiscal (checklist, classificação sugerida, OCR de anexos, relatórios, quotas de IA)',
-      'Prisma + migrações; isolamento por userId nas queries; validação e guards nas rotas',
-      'Testes (Vitest no front, Jest/e2e no back), CI e deploy com Render (API + PostgreSQL + static site), blueprint render.yaml'
+      'Pipelines ETL com dados do IBGE (LSPA/SIDRA) e da Open-Meteo, armazenados em PostgreSQL com PostGIS',
+      'Dashboards geoespaciais: mapa climático e mapa de produtividade por UF',
+      'Alertas oficiais do INMET atualizados automaticamente',
+      'IAgro: chatbot com Google Gemini que responde com base nos dados da plataforma',
+      'Exportação de relatórios, inclusive gerados por IA',
+      'Deploy no Render com sincronização agendada via GitHub Actions'
     ],
-    demoUrl: 'https://financeflow-zocs.onrender.com/',
-    repoUrl: 'https://github.com/devJPMello/FinanceFlow'
+    image: { src: '/projects/climaagro.png', alt: 'Dashboard do ClimaAgro com indicadores climáticos e resumo por estado', width: 1915, height: 941 },
+    metrics: [
+      { value: '4', label: 'fontes de dados integradas' },
+      { value: '2x/dia', label: 'sincronização automática' },
+      { value: 'TCC', label: 'projeto de conclusão de curso' }
+    ],
+    demoUrl: 'https://climaagro.onrender.com',
+    repoUrl: 'https://github.com/devJPMello/ClimaAgro'
   },
   {
-    id: '2',
-    name: 'TaskMind | SaaS de Gestão de Projetos',
+    id: '6',
+    name: 'Monkeys Games | Site do estúdio e jogos Roblox',
     category: 'main',
-    problem: 'Equipes precisavam de uma ferramenta de gestão de projetos inspirada no Jira, mas com foco em clareza, simplicidade e inteligência artificial como copiloto para otimizar o fluxo de trabalho e reduzir a carga cognitiva na criação e gestão de issues.',
-    solution: 'Desenvolvi um SaaS completo de gestão de projetos com arquitetura monorepo, oferecendo Kanban board, backlog, sprints, workflows customizáveis, sistema de comentários, controle de acesso baseado em roles (RBAC), multi-tenant com isolamento completo por organização, audit log para rastreabilidade e IA copiloto para melhorar descrições, sugerir subtarefas e prioridades.',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Express.js', 'Node.js', 'Prisma', 'PostgreSQL', 'Tailwind CSS', 'JWT', 'Zod', 'Docker', 'Monorepo (npm workspaces)'],
+    problem:
+      'O estúdio independente precisava de presença online para divulgar seus jogos e comunidade, e de jogos prontos para publicar e monetizar no Roblox.',
+    solution:
+      'Desenvolvi a landing page do estúdio (React + Vite, publicada na Vercel) com catálogo de jogos, equipe e links para comunidade, e participo da criação de jogos para Roblox em Luau com Rojo: Quebre a Montanha (simulador de mineração), Monkey Island / Banana Empire (tycoon) e Wall Rush, com salvamento de dados, economia e monetização (gamepasses e produtos).',
+    technologies: ['React', 'Vite', 'JavaScript', 'Vercel', 'Luau', 'Rojo', 'Roblox Studio', 'DataStore', 'GitHub'],
     highlights: [
-      'Arquitetura monorepo com apps/api (Express) e apps/web (Next.js 14 App Router)',
-      'Kanban board interativo com drag-and-drop para gestão visual de issues',
-      'Sistema completo de sprints, backlog e workflows customizáveis',
-      'IA Copiloto integrada: Enhance Description, Breakdown Tasks e Smart Suggestions',
-      'Multi-tenant com isolamento completo por organização',
-      'RBAC (Role-Based Access Control) com roles Admin, Member e Viewer',
-      'Audit Log completo para rastreabilidade de todas as ações',
-      'API REST documentada com Swagger/OpenAPI',
-      'Autenticação JWT com access tokens e refresh tokens',
-      'Rate limiting e validação de dados com Zod',
-      'Deploy automatizado com Docker e Docker Compose'
+      'Landing page responsiva do estúdio com jogos, equipe, redes sociais e Discord',
+      'Jogos Roblox com código versionado em Git e sincronizado com o Studio via Rojo',
+      'Sistemas de economia, progressão, salvamento e monetização nos jogos',
+      'Trabalho em equipe com repositórios na organização Monkeys-Games no GitHub'
     ],
-    repoUrl: 'https://github.com/devJPMello/TaskMind'
+    image: { src: '/projects/monkeys.png', alt: 'Landing page da Monkeys Games' },
+    metrics: [
+      { value: '6', label: 'desenvolvedores na equipe' },
+      { value: '3', label: 'jogos indie para Roblox' }
+    ],
+    demoUrl: 'https://monkeys-games-lp.vercel.app',
+    repoUrl: 'https://github.com/Monkeys-Games/Monkeys_Games_LP',
+    extraLinks: [{ label: 'Comunidade Roblox', url: 'https://www.roblox.com/pt/communities/221696572/Monkeys-Games' }]
   },
   {
     id: '3',
@@ -106,8 +92,26 @@ export const projects: Project[] = [
       agent: '3 agentes especializados: Chat Livre (conversação geral), Planos de Estudo (criação de planos personalizados) e Resumos (geração de resumos inteligentes)',
       automation: 'Automação completa do fluxo de interação com IA através de sistema de threads, permitindo conversas contextuais e histórico persistente para múltiplos agentes especializados'
     },
-    demoUrl: 'https://nexus-1-yc96.onrender.com/',
+    metrics: [
+      { value: '3', label: 'agentes especializados' }
+    ],
     repoUrl: 'https://github.com/BitStudioLabs/nexus/tree/develop'
+  },
+  {
+    id: '7',
+    name: 'SGD-Municípios | Plataforma GovTech de Processo Eletrônico',
+    category: 'contribution',
+    company: 'New Code',
+    role: 'Desenvolvedor Full Stack (abr. 2026 – nov. 2026)',
+    contribution: 'Plataforma multi-tenant de gestão eletrônica de documentos e processos para prefeituras do Tocantins, cobrindo autuação, tramitação, assinatura, busca por OCR e portal do cidadão com login gov.br. Atuei no desenvolvimento full stack, com React no frontend e NestJS, TypeScript e PostgreSQL no backend, elaborando documentação técnica e plano de implementação antes de cada entrega.',
+    technologies: ['React', 'NestJS', 'TypeScript', 'PostgreSQL', 'Multi-tenant', 'IA / Embeddings', 'Acessibilidade', 'GovTech', 'Prisma', 'Playwright', 'Object Storage'],
+    highlights: [
+      'Módulos com controle de acesso por papéis (RBAC)',
+      'Processamento assíncrono de arquivos',
+      'Trilhas de auditoria sobre operações críticas',
+      'Versionamento de documentos e integração com object storage, mantendo rastreabilidade e integridade dos dados',
+      'Documentação técnica e planos de implementação que reduziram retrabalho no squad'
+    ]
   },
   {
     id: '4',
