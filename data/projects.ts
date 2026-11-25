@@ -94,30 +94,6 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/devJPMello/FinanceFlow'
   },
   {
-    id: '6',
-    name: 'Monkeys Games | Site do estúdio e jogos indie',
-    category: 'main',
-    problem:
-      'O estúdio independente precisava de presença online para divulgar seus jogos e comunidade, e de jogos prontos para publicar e monetizar no Roblox.',
-    solution:
-      'Desenvolvi a landing page do estúdio (React + Vite, publicada na Vercel) com catálogo de jogos, equipe e links para comunidade, e participo da criação de jogos para Roblox em Luau com Rojo: Quebre a Montanha (simulador de mineração), Monkey Island / Banana Empire (tycoon) e Wall Rush, com salvamento de dados, economia e monetização (gamepasses e produtos).',
-    technologies: ['React', 'Vite', 'JavaScript', 'Vercel', 'Luau', 'Rojo', 'Roblox Studio', 'DataStore', 'GitHub'],
-    highlights: [
-      'Landing page responsiva do estúdio com jogos, equipe, redes sociais e Discord',
-      'Jogos Roblox com código versionado em Git e sincronizado com o Studio via Rojo',
-      'Sistemas de economia, progressão, salvamento e monetização nos jogos',
-      'Trabalho em equipe com repositórios na organização Monkeys-Games no GitHub'
-    ],
-    image: { src: '/projects/monkeys.png', alt: 'Landing page da Monkeys Games' },
-    metrics: [
-      { value: '6', label: 'desenvolvedores na equipe' },
-      { value: '3', label: 'jogos indie para Roblox' }
-    ],
-    demoUrl: 'https://monkeys-games-lp.vercel.app',
-    repoUrl: 'https://github.com/Monkeys-Games/Monkeys_Games_LP',
-    extraLinks: [{ label: 'Comunidade Roblox', url: 'https://www.roblox.com/pt/communities/221696572/Monkeys-Games' }]
-  },
-  {
     id: '3',
     name: 'Nexus - Plataforma de Agentes de IA Especializados',
     category: 'ai',
@@ -187,5 +163,27 @@ export const projects: Project[] = [
       'Tratamento de estados da aplicação (loading, sucesso e erro) para melhor experiência do usuário.',
       'Integração do front-end com o back-end via APIs REST, garantindo comunicação eficiente e segura.'
     ]
+  },
+  {
+    id: '6',
+    name: 'Monkeys Games | Site do estúdio e jogos indie',
+    category: 'contribution',
+    company: 'Monkeys Games',
+    role: 'Desenvolvedor Full Stack',
+    contribution: 'Desenvolvo, junto com a equipe do estúdio, a landing page (React + Vite, na Vercel) e participo da criação dos jogos indie para Roblox em Luau.',
+    problem:
+      'O estúdio independente precisava de presença online para divulgar seus jogos e comunidade, e de jogos prontos para publicar e monetizar no Roblox.',
+    solution:
+      'Desenvolvi a landing page do estúdio (React + Vite, publicada na Vercel) com catálogo de jogos, equipe e links para comunidade, e participo da criação de jogos para Roblox em Luau com Rojo: Quebre a Montanha (simulador de mineração), Monkey Island / Banana Empire (tycoon) e Wall Rush, com salvamento de dados, economia e monetização (gamepasses e produtos).',
+    technologies: ['React', 'Vite', 'JavaScript', 'Vercel', 'Luau', 'Rojo', 'Roblox Studio', 'DataStore', 'GitHub'],
+    highlights: [
+      'Landing page responsiva do estúdio com jogos, equipe, redes sociais e Discord',
+      'Jogos Roblox com código versionado em Git e sincronizado com o Studio via Rojo',
+      'Sistemas de economia, progressão, salvamento e monetização nos jogos',
+      'Trabalho em equipe com repositórios na organização Monkeys-Games no GitHub'
+    ],
+    demoUrl: 'https://monkeys-games-lp.vercel.app',
+    repoUrl: 'https://github.com/Monkeys-Games/Monkeys_Games_LP',
+    extraLinks: [{ label: 'Comunidade Roblox', url: 'https://www.roblox.com/pt/communities/221696572/Monkeys-Games' }]
   }
 ];
