@@ -49,6 +49,51 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/devJPMello/ClimaAgro'
   },
   {
+    id: '8',
+    name: 'FinanceFlow | Organização de finanças pessoais',
+    category: 'main',
+    problem:
+      'Extratos bancários são uma bagunça: cada banco exporta em um formato, as transações não vêm categorizadas e fica difícil saber para onde o dinheiro vai e se o orçamento do mês está sob controle.',
+    solution:
+      'Desenvolvi do zero, do banco de dados ao deploy, uma aplicação full stack que importa extratos em CSV, XLSX, XLS e OFX (com detecção automática de colunas, revisão antes de confirmar, detecção de duplicadas e opção de desfazer), categoriza automaticamente por regras de texto ou regex, lança transações recorrentes, controla orçamentos mensais com alertas em 80% e 100% do limite e mostra tudo em dashboards e relatórios com exportação em CSV. Cada usuário enxerga só os próprios dados.',
+    technologies: [
+      'React',
+      'TypeScript',
+      'Vite',
+      'Tailwind CSS',
+      'TanStack Query',
+      'Storybook',
+      'NestJS',
+      'Prisma',
+      'PostgreSQL (Neon)',
+      'Zod',
+      'JWT',
+      'Docker',
+      'Playwright',
+      'GitHub Actions',
+      'Render'
+    ],
+    highlights: [
+      'Importação de extratos em CSV, XLSX, XLS e OFX, com mapeamento de colunas, revisão, detecção de duplicadas e desfazer',
+      'Gestão completa: contas, categorias, transações (Pix, débito e crédito), parcelamento, tags e anexo de comprovantes',
+      'Automação: regras de categorização por texto ou regex e transações recorrentes lançadas automaticamente',
+      'Orçamentos mensais por categoria com alertas ao chegar em 80% e 100% do limite',
+      'Dashboard com saldo, comparação com o mês anterior, gráficos por categoria e fluxo mensal, e relatórios em CSV',
+      'Contas de usuário com JWT e refresh token rotativo, recuperação de senha por e-mail e exclusão de conta',
+      'Segurança: senhas com hash, rate limiting, Helmet, CORS restrito e isolamento de dados por usuário',
+      'Front em Atomic Design com Storybook; validação Zod compartilhada entre front e back em um monorepo',
+      'Testes unitários, e2e da API com banco real e fluxos no navegador com Playwright; CI no GitHub Actions',
+      'Docker e docker compose, deploy na Render (Blueprint) e PostgreSQL serverless no Neon'
+    ],
+    image: { src: '/projects/financeflow.png', alt: 'Dashboard do FinanceFlow com saldo, receitas, despesas e gastos por categoria', width: 1900, height: 939 },
+    metrics: [
+      { value: '4', label: 'formatos de extrato importados' },
+      { value: '80% / 100%', label: 'alertas de orçamento' }
+    ],
+    demoUrl: 'https://financeflow-web-udqr.onrender.com',
+    repoUrl: 'https://github.com/devJPMello/FinanceFlow'
+  },
+  {
     id: '6',
     name: 'Monkeys Games | Site do estúdio e jogos Roblox',
     category: 'main',
