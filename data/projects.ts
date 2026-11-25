@@ -94,6 +94,52 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/devJPMello/FinanceFlow'
   },
   {
+    id: '9',
+    name: 'Bomba Certa | Mapa colaborativo de preços de combustível',
+    category: 'main',
+    problem:
+      'Quem abastece em Palmas-TO não tem como saber qual posto está mais barato por perto, e os preços mudam o tempo todo, o que deixa qualquer lista estática desatualizada.',
+    solution:
+      'Desenvolvi um mapa colaborativo em que o usuário vê os postos num raio ao redor, ordenados do mais barato ao mais caro, e reporta ou confirma preços para manter os dados atualizados. Preços muito fora da mediana da cidade ficam pendentes até serem confirmados por outros usuários, e é possível criar alertas de preço. É um monorepo com API em NestJS 11, Prisma e PostgreSQL/PostGIS (consultas de raio com ST_DWithin e índice GIST), filas BullMQ/Redis para os alertas e a importação mensal de dados da ANP, e front em React 19 com Leaflet, PWA com modo offline e app Expo (React Native).',
+    technologies: [
+      'NestJS 11',
+      'Prisma',
+      'PostgreSQL + PostGIS',
+      'BullMQ',
+      'Redis',
+      'JWT',
+      'React 19',
+      'Vite',
+      'Tailwind CSS 4',
+      'Leaflet',
+      'PWA',
+      'Storybook',
+      'Expo (React Native)',
+      'GitHub Actions',
+      'Render',
+      'Neon'
+    ],
+    highlights: [
+      'Mapa com os postos num raio ao redor, ordenados do mais barato ao mais caro',
+      'Preços reportados e confirmados pelos usuários; valores fora da mediana da cidade ficam pendentes até serem confirmados',
+      'Alertas de preço e importação mensal de dados da ANP processados em filas com BullMQ e Redis',
+      'Consultas geoespaciais de raio com PostGIS (ST_DWithin e índice GIST)',
+      'Autenticação com JWT e refresh tokens rotativos',
+      'Front em React 19, Vite, Tailwind 4 e Leaflet, instalável como PWA e com modo offline',
+      'Storybook com testes de acessibilidade (axe) e app mobile em Expo (React Native)',
+      'Testes unitários e de integração contra Postgres e Redis reais, com CI no GitHub Actions',
+      'Deploy gratuito: Render (API e site) e Neon (banco)'
+    ],
+    image: { src: '/projects/bombacerta.webp', alt: 'Mapa do Bomba Certa com postos de Palmas-TO e preços de combustível', width: 1568, height: 772 },
+    metrics: [
+      { value: 'PWA', label: 'com modo offline' },
+      { value: 'Web + Mobile', label: 'React e Expo (React Native)' }
+    ],
+    demoUrl: 'https://bomba-certa-web.onrender.com',
+    repoUrl: 'https://github.com/devJPMello/AbasteceA-',
+    extraLinks: [{ label: 'API', url: 'https://bomba-certa-api.onrender.com' }]
+  },
+  {
     id: '3',
     name: 'Nexus - Plataforma de Agentes de IA Especializados',
     category: 'ai',
