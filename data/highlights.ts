@@ -33,7 +33,7 @@ export const highlights: Highlight[] = [
   {
     icon: FiPlay,
     title: 'Monkeys Games',
-    text: 'Site do estúdio e jogos Roblox em equipe de 6 desenvolvedores.',
+    text: 'Site do estúdio e jogos indie em equipe de 6 desenvolvedores.',
     projectId: '6',
   },
 ];

@@ -95,7 +95,7 @@ export const projects: Project[] = [
   },
   {
     id: '6',
-    name: 'Monkeys Games | Site do estúdio e jogos Roblox',
+    name: 'Monkeys Games | Site do estúdio e jogos indie',
     category: 'main',
     problem:
       'O estúdio independente precisava de presença online para divulgar seus jogos e comunidade, e de jogos prontos para publicar e monetizar no Roblox.',
