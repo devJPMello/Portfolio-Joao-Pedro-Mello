@@ -179,7 +179,7 @@ export const projects: Project[] = [
       'Segurança: argon2id, JWT com refresh token rotativo e limite de tentativas',
       'Mais de 800 testes automatizados e CI no GitHub Actions'
     ],
-    image: { src: '/projects/racha.png', alt: 'Tela de entrada do Racha, app de divisão de contas', width: 1440, height: 900 },
+    image: { src: '/projects/racha-grupo.png', alt: 'Grupo de viagem no Racha com despesas divididas e valor a receber', width: 1440, height: 900 },
     metrics: [
       { value: '800+', label: 'testes automatizados' },
       { value: 'Web + Mobile', label: 'React e React Native (Expo)' }
