@@ -140,6 +140,55 @@ export const projects: Project[] = [
     extraLinks: [{ label: 'API', url: 'https://bomba-certa-api.onrender.com' }]
   },
   {
+    id: '10',
+    name: 'Racha | Divisão de contas em grupo com Pix',
+    category: 'main',
+    problem:
+      'Em viagens e apartamentos compartilhados, cada pessoa paga uma coisa e no fim é difícil saber quem deve para quem, sem fazer um monte de transferências nem errar centavos.',
+    solution:
+      'Desenvolvi um app em que cada pessoa lança o que pagou, o sistema calcula os saldos, mostra quem deve para quem com o menor número de transferências e gera um Pix copia e cola com QR Code para quitar (o app só gera o código, não processa pagamentos). O projeto reúne API, aplicação web e app mobile em um monorepo TypeScript, com a mesma validação Zod nos três.',
+    technologies: [
+      'TypeScript',
+      'NestJS',
+      'Prisma',
+      'PostgreSQL',
+      'React',
+      'Vite',
+      'Tailwind CSS',
+      'TanStack Query',
+      'React Hook Form',
+      'Zod',
+      'React Native',
+      'Expo',
+      'Jest',
+      'Vitest',
+      'Docker',
+      'GitHub Actions',
+      'Render',
+      'Neon'
+    ],
+    highlights: [
+      'Cadastro, login e grupos com convite por link',
+      'Divisão igual, por valor exato, porcentagem ou partes',
+      'Saldos e registro de pagamentos, inclusive parciais, com Pix copia e cola e QR Code',
+      'Feed de atividades e gráficos de gastos',
+      'Web responsiva com tema claro e escuro e app mobile com as mesmas funções',
+      'Simplificação de dívidas: número mínimo de transferências com programação dinâmica até 16 pessoas com saldo, e algoritmo guloso acima disso',
+      'Dinheiro sem erro de arredondamento: valores em centavos inteiros e distribuição determinística das sobras',
+      'Consistência: transações, controle de versão na edição e criação de despesa sem duplicidade',
+      'Segurança: argon2id, JWT com refresh token rotativo e limite de tentativas',
+      'Mais de 800 testes automatizados e CI no GitHub Actions'
+    ],
+    image: { src: '/projects/racha.png', alt: 'Tela de entrada do Racha, app de divisão de contas', width: 1440, height: 900 },
+    metrics: [
+      { value: '800+', label: 'testes automatizados' },
+      { value: 'Web + Mobile', label: 'React e React Native (Expo)' }
+    ],
+    demoUrl: 'https://racha-b1d0.onrender.com',
+    repoUrl: 'https://github.com/devJPMello/Racha',
+    extraLinks: [{ label: 'Documentação da API', url: 'https://racha-b1d0.onrender.com/docs' }]
+  },
+  {
     id: '3',
     name: 'Nexus - Plataforma de Agentes de IA Especializados',
     category: 'ai',
